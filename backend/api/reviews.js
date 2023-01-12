@@ -34,7 +34,6 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const a = MongoClient.db("movie").collection("reviews");
-
   try {
     const data = new movieModel(req.body);
     const response = await a.insertOne(data);
